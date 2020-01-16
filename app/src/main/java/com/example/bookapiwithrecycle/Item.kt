@@ -3,95 +3,46 @@ package com.example.bookapikotlin
 import com.google.gson.annotations.Expose
 import com.google.gson.annotations.SerializedName
 
-class Item {
+data class Item(var x:String) {
 
     @SerializedName("kind")
     @Expose
-    private var kind: String? = null
+     var kind: String? = null
+
+    get() = field
+
     @SerializedName("id")
     @Expose
-    private var id: String? = null
+     var id: String? = null
+    get() = field
+
     @SerializedName("etag")
     @Expose
-    private var etag: String? = null
+     var etag: String? = null
+    get() = field
+
     @SerializedName("selfLink")
     @Expose
-    private var selfLink: String? = null
+     var selfLink: String? = null
+    get() = field
+
     @SerializedName("volumeInfo")
     @Expose
-    private var volumeInfo: VolumeInfo? = null
+    var volumeInfo: VolumeInfo? = null
+    get() = field
+
     @SerializedName("saleInfo")
     @Expose
-    private var saleInfo: SaleInfo? = null
+     var saleInfo: SaleInfo? = null
+    get() = field
+
     @SerializedName("accessInfo")
     @Expose
-    private var accessInfo: AccessInfo? = null
+     var accessInfo: AccessInfo? = null
+    get() = field
+
     @SerializedName("searchInfo")
     @Expose
-    private var searchInfo: SearchInfo? = null
-
-    fun getKind(): String? {
-        return kind
+     var searchInfo: SearchInfo? = null
+    get() = field
     }
-
-    fun setKind(kind: String) {
-        this.kind = kind
-    }
-
-    fun getId(): String? {
-        return id
-    }
-
-    fun setId(id: String) {
-        this.id = id
-    }
-
-    fun getEtag(): String? {
-        return etag
-    }
-
-    fun setEtag(etag: String) {
-        this.etag = etag
-    }
-
-    fun getSelfLink(): String? {
-        return selfLink
-    }
-
-    fun setSelfLink(selfLink: String) {
-        this.selfLink = selfLink
-    }
-
-    fun getVolumeInfo(): VolumeInfo? {
-        return volumeInfo
-    }
-
-    fun setVolumeInfo(volumeInfo: VolumeInfo) {
-        this.volumeInfo = volumeInfo
-    }
-
-    fun getSaleInfo(): SaleInfo? {
-        return saleInfo
-    }
-
-    fun setSaleInfo(saleInfo: SaleInfo) {
-        this.saleInfo = saleInfo
-    }
-
-    fun getAccessInfo(): AccessInfo? {
-        return accessInfo
-    }
-
-    fun setAccessInfo(accessInfo: AccessInfo) {
-        this.accessInfo = accessInfo
-    }
-
-    fun getSearchInfo(): SearchInfo? {
-        return searchInfo
-    }
-
-    fun setSearchInfo(searchInfo: SearchInfo) {
-        this.searchInfo = searchInfo
-    }
-
-}

@@ -10,6 +10,7 @@ import android.util.Log
 import android.widget.AdapterView
 import android.widget.ListView
 import com.example.bookapikotlin.*
+import kotlinx.android.synthetic.main.activity_main.*
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -30,19 +31,19 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        recyclerView =  findViewById(R.id.my_recycler_view);
+        recyclerView = my_recycler_view
 
         // use this setting to improve performance if you know that changes
         // in content do not change the layout size of the RecyclerView
-        recyclerView?.setHasFixedSize(true);
+        recyclerView?.setHasFixedSize(true)
 
         // use a linear layout manager
-        layoutManager =LinearLayoutManager(this);
-        recyclerView?.setLayoutManager(layoutManager);
+        layoutManager =LinearLayoutManager(this)
+        recyclerView?.setLayoutManager(layoutManager)
 
         // specify an adapter (see also next example)
 
-        list= findViewById(R.id.my_recycler_view)
+        list= my_recycler_view
 
 
         val retrofit = Retrofit.Builder().baseUrl("https://www.googleapis.com/").addConverterFactory(
@@ -74,17 +75,17 @@ class MainActivity : AppCompatActivity() {
 
         Log.v(
             "ResponseMainActivity",
-            "Book Object the kind: " + resp?.getKind() + "Total Items :" + resp?.getTotalItems() + " Items Size:" + (resp?.getItems()?.size
+            "Book Object the kind: " + resp?.kind + "Total Items :" + resp?.totalItems + " Items Size:" + (resp?.items?.size
                     )
         )
      //   val adap = BookAdapter(this, resp?.getItems() as ArrayList<Item>)
         var arr: ArrayList<VolumeInfo> ?=null
          arr = ArrayList()
 
-        for (x in resp?.getItems()!!){
-            Log.v("MainActivitySizeARR",x.getVolumeInfo()?.getTitle())
+        for (x in resp?.items!!){
+            Log.v("MainActivitySizeARR",x.volumeInfo!!.title)
 
-            arr?.add(x.getVolumeInfo()!!)
+            arr?.add(x.volumeInfo!!)
             Log.v("MainActivitySizeARRSize",arr?.size.toString())
 
         }
@@ -95,12 +96,12 @@ class MainActivity : AppCompatActivity() {
         list?.setAdapter(mAdapter)
 
 
-        for (item in resp.getItems() as ArrayList<Item>) {
-            Log.v(
-                "ResponseMainActivity", "List Of Books " + " id: " + item.getId() + " kind: " + item.getKind() +
-                        " Salf Link: " + item.getSelfLink()
-            )
-        }
+//        for (item in resp.getItems() as ArrayList<Item>) {
+//            Log.v(
+//                "ResponseMainActivity", "List Of Books " + " id: " + item.getId() + " kind: " + item.getKind() +
+//                        " Salf Link: " + item.getSelfLink()
+//            )
+//        }
 
 
 

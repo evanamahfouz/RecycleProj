@@ -6,245 +6,113 @@ import com.google.gson.annotations.SerializedName
 class VolumeInfo {
     @SerializedName("title")
     @Expose
-    private var title: String? = null
+     var title: String? = null
+        get() = field
+
+
+
     @SerializedName("subtitle")
     @Expose
-    private var subtitle: String? = null
+     var subtitle: String? = null
+        get() = field
+
+
     @SerializedName("authors")
     @Expose
-    private var authors: List<String>? = null
+     var authors: List<String>? = null
+        get() = field
     @SerializedName("publisher")
     @Expose
-    private var publisher: String? = null
+     var publisher: String? = null
+        get() = field
+
+
     @SerializedName("publishedDate")
     @Expose
-    private var publishedDate: String? = null
+     var publishedDate: String? = null
+        get() = field
     @SerializedName("description")
     @Expose
-    private var description: String? = null
+     var description: String? = null
+        get() = field
     @SerializedName("industryIdentifiers")
     @Expose
-    private var industryIdentifiers: List<IndustryIdentifier>? = null
+     var industryIdentifiers: List<IndustryIdentifier>? = null
+        get() = field
     @SerializedName("readingModes")
     @Expose
-    private var readingModes: ReadingModes? = null
+     var readingModes: ReadingModes? = null
+        get() = field
     @SerializedName("printType")
     @Expose
-    private var printType: String? = null
+     var printType: String? = null
+        get() = field
     @SerializedName("maturityRating")
     @Expose
-    private var maturityRating: String? = null
+     var maturityRating: String? = null
+        get() = field
     @SerializedName("allowAnonLogging")
     @Expose
-    private var allowAnonLogging: Boolean? = null
+     var allowAnonLogging: Boolean? = null
+        get() = field
     @SerializedName("contentVersion")
     @Expose
-    private var contentVersion: String? = null
+     var contentVersion: String? = null
+        get() = field
     @SerializedName("panelizationSummary")
     @Expose
-    private var panelizationSummary: PanelizationSummary? = null
+     var panelizationSummary: PanelizationSummary? = null
+        get() = field
     @SerializedName("imageLinks")
     @Expose
-    private var imageLinks: ImageLinks? = null
+     var imageLinks: ImageLinks? = null
+        get() = field
     @SerializedName("language")
     @Expose
-    private var language: String? = null
+     var language: String? = null
+        get() = field
     @SerializedName("previewLink")
     @Expose
-    private var previewLink: String? = null
+     var previewLink: String? = null
+        get() = field
     @SerializedName("infoLink")
     @Expose
-    private var infoLink: String? = null
+     var infoLink: String? = null
+        get() = field
     @SerializedName("canonicalVolumeLink")
     @Expose
-    private var canonicalVolumeLink: String? = null
+     var canonicalVolumeLink: String? = null
+        get() = field
     @SerializedName("pageCount")
     @Expose
-    private var pageCount: Int? = null
+     var pageCount: Int? = null
+        get() = field
+
+
     @SerializedName("categories")
     @Expose
-    private var categories: List<String>? = null
+     var categories: List<String>? = null
+        get() = field
+
+
     @SerializedName("averageRating")
     @Expose
-    private var averageRating: Double? = null
+     var averageRating: Double? = null
+        get() = field
+
+
     @SerializedName("ratingsCount")
     @Expose
-    private var ratingsCount: Int? = null
+     var ratingsCount: Int? = null
+        get() = field
 
-    fun getTitle(): String? {
-        return title
-    }
-
-    fun setTitle(title: String) {
-        this.title = title
-    }
-
-    fun getSubtitle(): String? {
-        return subtitle
-    }
-
-    fun setSubtitle(subtitle: String) {
-        this.subtitle = subtitle
-    }
-
-    fun getAuthors(): List<String>? {
-        return authors
-    }
-
-    fun setAuthors(authors: List<String>) {
-        this.authors = authors
-    }
-
-    fun getPublisher(): String? {
-        return publisher
-    }
-
-    fun setPublisher(publisher: String) {
-        this.publisher = publisher
-    }
-
-    fun getPublishedDate(): String? {
-        return publishedDate
-    }
-
-    fun setPublishedDate(publishedDate: String) {
-        this.publishedDate = publishedDate
-    }
-
-    fun getDescription(): String? {
-        return description
-    }
-
-    fun setDescription(description: String) {
-        this.description = description
-    }
-
-    fun getIndustryIdentifiers(): List<IndustryIdentifier>? {
-        return industryIdentifiers
-    }
-
-    fun setIndustryIdentifiers(industryIdentifiers: List<IndustryIdentifier>) {
-        this.industryIdentifiers = industryIdentifiers
-    }
-
-    fun getReadingModes(): ReadingModes? {
-        return readingModes
-    }
-
-    fun setReadingModes(readingModes: ReadingModes) {
-        this.readingModes = readingModes
-    }
-
-    fun getPrintType(): String? {
-        return printType
-    }
-
-    fun setPrintType(printType: String) {
-        this.printType = printType
-    }
-
-    fun getMaturityRating(): String? {
-        return maturityRating
-    }
-
-    fun setMaturityRating(maturityRating: String) {
-        this.maturityRating = maturityRating
-    }
-
-    fun getAllowAnonLogging(): Boolean? {
-        return allowAnonLogging
-    }
-
-    fun setAllowAnonLogging(allowAnonLogging: Boolean?) {
-        this.allowAnonLogging = allowAnonLogging
-    }
-
-    fun getContentVersion(): String? {
-        return contentVersion
-    }
-
-    fun setContentVersion(contentVersion: String) {
-        this.contentVersion = contentVersion
-    }
-
-    fun getPanelizationSummary(): PanelizationSummary? {
-        return panelizationSummary
-    }
-
-    fun setPanelizationSummary(panelizationSummary: PanelizationSummary) {
-        this.panelizationSummary = panelizationSummary
-    }
-
-    fun getImageLinks(): ImageLinks? {
-        return imageLinks
-    }
-
-    fun setImageLinks(imageLinks: ImageLinks) {
-        this.imageLinks = imageLinks
-    }
-
-    fun getLanguage(): String? {
-        return language
-    }
-
-    fun setLanguage(language: String) {
-        this.language = language
-    }
-
-    fun getPreviewLink(): String? {
-        return previewLink
-    }
-
-    fun setPreviewLink(previewLink: String) {
-        this.previewLink = previewLink
-    }
-
-    fun getInfoLink(): String? {
-        return infoLink
-    }
-
-    fun setInfoLink(infoLink: String) {
-        this.infoLink = infoLink
-    }
-
-    fun getCanonicalVolumeLink(): String? {
-        return canonicalVolumeLink
-    }
-
-    fun setCanonicalVolumeLink(canonicalVolumeLink: String) {
-        this.canonicalVolumeLink = canonicalVolumeLink
-    }
-
-    fun getPageCount(): Int? {
-        return pageCount
-    }
-
-    fun setPageCount(pageCount: Int?) {
-        this.pageCount = pageCount
-    }
-
-    fun getCategories(): List<String>? {
-        return categories
-    }
-
-    fun setCategories(categories: List<String>) {
-        this.categories = categories
-    }
-
-    fun getAverageRating(): Double? {
-        return averageRating
-    }
-
-    fun setAverageRating(averageRating: Double?) {
-        this.averageRating = averageRating
-    }
-
-    fun getRatingsCount(): Int? {
-        return ratingsCount
-    }
-
-    fun setRatingsCount(ratingsCount: Int?) {
-        this.ratingsCount = ratingsCount
-    }
 
 }
+
+
+
+
+
+
+
+

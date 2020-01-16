@@ -7,23 +7,12 @@ class PanelizationSummary {
     @SerializedName("containsEpubBubbles")
     @Expose
     private var containsEpubBubbles: Boolean? = null
+        get() = field
+
     @SerializedName("containsImageBubbles")
     @Expose
     private var containsImageBubbles: Boolean? = null
+        get() = field
 
-    fun getContainsEpubBubbles(): Boolean? {
-        return containsEpubBubbles
-    }
 
-    fun setContainsEpubBubbles(containsEpubBubbles: Boolean?) {
-        this.containsEpubBubbles = containsEpubBubbles
-    }
-
-    fun getContainsImageBubbles(): Boolean? {
-        return containsImageBubbles
-    }
-
-    fun setContainsImageBubbles(containsImageBubbles: Boolean?) {
-        this.containsImageBubbles = containsImageBubbles
-    }
 }

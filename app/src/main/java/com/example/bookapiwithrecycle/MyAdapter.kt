@@ -10,45 +10,55 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import com.example.bookapikotlin.VolumeInfo
+import kotlinx.android.synthetic.main.list_quick.view.*
+import org.jetbrains.anko.find
 
-    class MyAdapter(private val List: ArrayList<VolumeInfo>) : RecyclerView.Adapter<MyAdapter.MyViewHolder>() {
+class MyAdapter(private val List: ArrayList<VolumeInfo>) : RecyclerView.Adapter<MyAdapter.MyViewHolder>() {
 
         /**
          * View holder class
          */
         inner class MyViewHolder(view: View) : RecyclerView.ViewHolder(view) {
-            var title: TextView
+            var title: TextView?=null
             var sub_title: TextView?=null
             var authors: TextView?=null
             var click: TextView?=null
 
 
             init {
-                title = view.findViewById(com.example.bookapiwithrecycle.R.id.txt_title)
-                sub_title = view.findViewById(com.example.bookapiwithrecycle.R.id.txt_subtitle)
-                authors = view.findViewById(com.example.bookapiwithrecycle.R.id.txt_authors)
-                click = view.findViewById(com.example.bookapiwithrecycle.R.id.txt_click)
+                view.apply {
+                    title =txt_title
+                    sub_title = txt_subtitle
+                    authors = txt_authors
+                    click = txt_click
+                }
+
 
             }
         }
 
         override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
             val c = List[position]
-            Log.v("MainActivity889898","title"+c.getTitle()+"sub_title"+c.getSubtitle()+"authors"+c.getAuthors())
-            holder.title.setText(c.getTitle())
-            holder.sub_title?.setText(c.getSubtitle())
-            if(c.getAuthors()!=null) {
-                holder.authors?.append(c.getAuthors().toString())
+
+           holder.apply {
+               title?.text=c.title
+               sub_title?.text=(c.subtitle)
+                if(c.authors!=null) {
+                    holder.authors?.append(c.authors.toString())
+                }
+
+                click?.setOnClickListener {
+                    val context=title?.context
+                    val intent = Intent( context, BookDecrip::class.java)
+                    intent.putExtra("Description",c.description)
+                    context?.startActivity(intent)
+
+                    Log.v("MyAdapterClicked",position.toString()+ c.authors);
+                }
             }
 
-            holder.click?.setOnClickListener { view ->
-                val context=holder.title.context
-                val intent = Intent( context, BookDecrip::class.java)
-                intent.putExtra("Description",c.getDescription())
-                context.startActivity(intent)
 
-                Log.v("MyAdapterClicked",position.toString()+ c.getAuthors());
-            }
+
         }
 
         override fun getItemCount(): Int {

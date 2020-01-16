@@ -7,37 +7,14 @@ class BookObject {
 
     @SerializedName("kind")
     @Expose
-    private var kind: String? = null
+     var kind: String? = null
+       get() = field
     @SerializedName("totalItems")
     @Expose
-    private var totalItems: Int? = null
+     var totalItems: Int? = null
+       get() = field
     @SerializedName("items")
     @Expose
-    private var items: List<Item>? = null
+     var items: List<Item>? = null
+        get() = field}
 
-    private var it:List<String>?=null
-    fun getKind(): String? {
-        return kind
-    }
-
-    fun setKind(kind: String) {
-        this.kind = kind
-    }
-
-    fun getTotalItems(): Int? {
-        return totalItems
-    }
-
-    fun setTotalItems(totalItems: Int?) {
-        this.totalItems = totalItems
-    }
-
-    fun getItems(): List<Item>? {
-        return items
-    }
-
-    fun setItems(items: List<Item>) {
-        this.items = items
-    }
-
-}

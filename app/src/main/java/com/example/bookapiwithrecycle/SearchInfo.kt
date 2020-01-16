@@ -7,13 +7,7 @@ class SearchInfo {
     @SerializedName("textSnippet")
     @Expose
     private var textSnippet: String? = null
+    get() = field
 
-    fun getTextSnippet(): String? {
-        return textSnippet
-    }
-
-    fun setTextSnippet(textSnippet: String) {
-        this.textSnippet = textSnippet
-    }
 
 }

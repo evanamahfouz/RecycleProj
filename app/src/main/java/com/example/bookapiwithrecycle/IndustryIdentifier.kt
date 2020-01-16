@@ -7,23 +7,12 @@ class IndustryIdentifier {
     @SerializedName("type")
     @Expose
     private var type: String? = null
+        get() = field
+
     @SerializedName("identifier")
     @Expose
     private var identifier: String? = null
+        get() = field
 
-    fun getType(): String? {
-        return type
-    }
 
-    fun setType(type: String) {
-        this.type = type
-    }
-
-    fun getIdentifier(): String? {
-        return identifier
-    }
-
-    fun setIdentifier(identifier: String) {
-        this.identifier = identifier
-    }
 }

@@ -7,23 +7,13 @@ class ReadingModes {
     @SerializedName("text")
     @Expose
     private var text: Boolean? = null
+        get() = field
+
     @SerializedName("image")
     @Expose
     private var image: Boolean? = null
+        get() = field
 
-    fun getText(): Boolean? {
-        return text
-    }
 
-    fun setText(text: Boolean?) {
-        this.text = text
-    }
 
-    fun getImage(): Boolean? {
-        return image
-    }
-
-    fun setImage(image: Boolean?) {
-        this.image = image
-    }
 }

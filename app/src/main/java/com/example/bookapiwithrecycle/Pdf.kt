@@ -7,24 +7,11 @@ class Pdf {
     @SerializedName("isAvailable")
     @Expose
     private var isAvailable: Boolean? = null
+        get() = field
+
     @SerializedName("acsTokenLink")
     @Expose
     private var acsTokenLink: String? = null
-
-    fun getIsAvailable(): Boolean? {
-        return isAvailable
-    }
-
-    fun setIsAvailable(isAvailable: Boolean?) {
-        this.isAvailable = isAvailable
-    }
-
-    fun getAcsTokenLink(): String? {
-        return acsTokenLink
-    }
-
-    fun setAcsTokenLink(acsTokenLink: String) {
-        this.acsTokenLink = acsTokenLink
-    }
+        get() = field
 
 }
